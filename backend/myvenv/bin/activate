@@ -38,11 +38,11 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\andsa\VSCode\KPopUniverse\backend\myvenv"
+VIRTUAL_ENV="/Users/andrewsamountry/VSCode/KPopUniverse/backend/myvenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
-PATH="$VIRTUAL_ENV/Scripts:$PATH"
+PATH="$VIRTUAL_ENV/bin:$PATH"
 export PATH
 
 # unset PYTHONHOME if set
