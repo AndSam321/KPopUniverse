@@ -1,4 +1,5 @@
 import os
+import environ
 from decouple import config
 """
 Django settings for kpop_universe_backend project.
@@ -11,6 +12,9 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 from pathlib import Path
 
@@ -85,11 +89,11 @@ WSGI_APPLICATION = 'kpop_universe_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'kpop_universe_db',
-        'USER': 'kpop_user',
-        'PASSWORD': 'kpop_pass',
-        'HOST': 'localhost',
-        'PORT': '5433',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
 }
 
